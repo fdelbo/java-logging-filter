@@ -1,0 +1,26 @@
+plugins {
+    id 'maven-publish'
+    id 'java-library'
+}
+
+group = 'ar.fdelbo.filter'
+version = '0.0.1'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-web:6.1.12'
+    implementation 'org.slf4j:slf4j-api:2.0.16'
+    implementation 'commons-io:commons-io:2.16.1'
+
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.1.0'
+}
